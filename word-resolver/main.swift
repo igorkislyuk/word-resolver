@@ -7,4 +7,10 @@
 
 import Foundation
 
-try App(path: ProcessInfo.processInfo.environment["SRCROOT"]!).start()
+let path = ProcessInfo.processInfo.environment["SRCROOT"]!
+
+let pathURL = URL(fileURLWithPath: path, isDirectory: true)
+let wordsPath = pathURL.appendingPathComponent("russian-5").appendingPathExtension("txt")
+let words = try String(contentsOfFile: wordsPath.path, encoding: .utf8)
+
+try App(path: path, initialWords: words.components(separatedBy: "\n")).start()
