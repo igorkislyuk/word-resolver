@@ -7,39 +7,26 @@
 
 import Foundation
 
-enum Localization {
-    static let welcome = "Welcome to Word Resolver!"
-    static let programStart = "Start of program. Will be pick random word. Input your mask, please"
-    static let end = "End of program"
-    static let brokenProgram = "Program is broken. You won"
-
-    static func current(word: String) -> String {
-        "Word is \"\(currentWord)\""
-    }
-
-    static let invalid(input: String) -> String {
-        "Your input is \(input). It's invalid"
-    }
-
-    static let won(word: String, iteration: Int) -> String {
-        "Your word in \(word). Number of steps \(iteration)"
-    }
-}
-
 private enum Constants {
-    static let missed = "-"
-    static let misplaced = "+"
-    static let placed = "@"
+    static let missed: Character = "-"
+    static let misplaced: Character = "+"
+    static let placed: Character = "@"
     static let defaultWord = ""
     static let defaultCount = 5
 }
 
-struct App {
+final class App {
+
     let path: String
     let initialWords: [String]
     
     // todo
     // let initialUniqueWords: [String]
+
+    init(path: String, initialWords: [String]) {
+        self.path = path
+        self.initialWords = initialWords
+    }
 
     // MARK: - Functions
 
@@ -142,7 +129,7 @@ struct App {
         }
 
         currentWords = currentWords.filter { word in
-            let onlyMisplacedLetters = word.filter(misplacedLetters.contains(:))
+            let onlyMisplacedLetters = word.filter(misplacedLetters.contains(_:))
             return onlyMisplacedLetters.count == misplacedLetters.count
         }
 

@@ -8,19 +8,17 @@
 import Foundation
 
 extension App {
-    /// Does not called at all
-    func filterWords(scrRoot: String) throws {
-        let scrURL = URL(fileURLWithPath: scrRoot, isDirectory: true)
-        let allWords = scrURL.appendingPathComponent("russian").appendingPathExtension("txt")
-        let newWordsPath = scrURL.appendingPathComponent("russian-5").appendingPathExtension("txt")
+    func processFile() throws {
+        let scrURL = URL(fileURLWithPath: path, isDirectory: true)
+        let originalStings = scrURL.appendingPathComponent("russian-5").appendingPathExtension("txt")
 
-        let words = try String(contentsOfFile: allWords.path, encoding: .utf8)
+        let words = try String(contentsOfFile: originalStings.path, encoding: .utf8)
 
         let newWords = words
             .components(separatedBy: "\n")
-            .filter { $0.count == 5 }
+            .filter { $0.range(of: "\\d{1,4}\\.", options: .regularExpression, range: nil, locale: nil) != nil }
             .joined(separator: "\n")
 
-        FileManager.default.createFile(atPath: newWordsPath.path, contents: newWords.data(using: .utf8), attributes: [:])
+        FileManager.default.createFile(atPath: originalStings.path, contents: newWords.data(using: .utf8), attributes: [:])
     }
 }
