@@ -22,6 +22,6 @@ enum Localization {
     }
 
     static func won(word: String, iteration: Int) -> String {
-        "Your word in \(word). Number of steps \(iteration)"
+        "Your word in \(word). Number of steps \(iteration)\n:DDDDDD\n"
     }
 }
