@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		5C741F2829083A2100C9F1BB /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C741F2729083A2100C9F1BB /* App.swift */; };
 		5C741F2A29083A5F00C9F1BB /* App+Filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C741F2929083A5F00C9F1BB /* App+Filter.swift */; };
-		5C741F2C29083AC100C9F1BB /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C741F2B29083AC100C9F1BB /* State.swift */; };
 		5C7485502909368700C9F1BB /* Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C74854F2909368700C9F1BB /* Localization.swift */; };
 		5C74BA332907D77600C9F1BB /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C74BA322907D77600C9F1BB /* main.swift */; };
 /* End PBXBuildFile section */
@@ -29,7 +28,6 @@
 /* Begin PBXFileReference section */
 		5C741F2729083A2100C9F1BB /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
 		5C741F2929083A5F00C9F1BB /* App+Filter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "App+Filter.swift"; sourceTree = "<group>"; };
-		5C741F2B29083AC100C9F1BB /* State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
 		5C74854F2909368700C9F1BB /* Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localization.swift; sourceTree = "<group>"; };
 		5C74BA2F2907D77600C9F1BB /* word-resolver */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "word-resolver"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C74BA322907D77600C9F1BB /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
@@ -68,7 +66,6 @@
 				5C741F2729083A2100C9F1BB /* App.swift */,
 				5C741F2929083A5F00C9F1BB /* App+Filter.swift */,
 				5C74BA322907D77600C9F1BB /* main.swift */,
-				5C741F2B29083AC100C9F1BB /* State.swift */,
 				5C74854F2909368700C9F1BB /* Localization.swift */,
 			);
 			path = "word-resolver";
@@ -136,7 +133,6 @@
 				5C7485502909368700C9F1BB /* Localization.swift in Sources */,
 				5C74BA332907D77600C9F1BB /* main.swift in Sources */,
 				5C741F2829083A2100C9F1BB /* App.swift in Sources */,
-				5C741F2C29083AC100C9F1BB /* State.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
